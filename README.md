@@ -1,4 +1,4 @@
-# Smart Parking Space Counter
+# **Parking Space Counter**
 
 <div align="center"> 
   <img src="asset/banner.png" width="750" alt="Banner" style="border-radius: 10px;"> 
