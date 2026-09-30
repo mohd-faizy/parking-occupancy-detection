@@ -39,33 +39,9 @@ A high-performance Computer Vision system that automates parking lot occupancy t
 
 ## System Pipeline
 
-```
-  Surveillance Video / Image
-              │
-              ▼
-    [ Grayscale Conversion ]  ──▶  Reduces 3 channels to 1 intensity channel
-              │
-              ▼
-     [ Gaussian Blur (3x3) ]  ──▶  Suppresses high-frequency sensor noise
-              │
-              ▼
-   [ Adaptive Thresholding ]  ──▶  Calculates local contrast threshold per 25x25 window
-              │
-              ▼
-      [ Median Blur (5x5) ]   ──▶  Eliminates salt-and-pepper noise specks
-              │
-              ▼
-    [ Morphological Dilation] ──▶  Expands vehicle edges and fills contour gaps
-              │
-              ▼
-     [ Slot Pixel Counting ]  ──▶  cv2.countNonZero(crop)
-              │
-      ┌───────┴───────┐
-      ▼               ▼
-Count < 900     Count >= 900
-   [FREE]        [OCCUPIED]
-  (Green)          (Red)
-```
+<p align="center">
+  <img src="asset/sys-pipeline.png" alt="System Pipeline" width="720"/>
+</p>
 
 | Stage | Operation | OpenCV Function | Purpose |
 |:---:|:---|:---|:---|
